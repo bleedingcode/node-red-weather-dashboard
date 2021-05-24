@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Weather Dashboard</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <style>
+    .section {
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background-color: #111111;
+      color: #ccc;
+      border-top: solid 3px #1E97E3;
+      height: 50px;
+    }
+
+
+    .menuitem {
+      margin-top: 12px;
+      display: inline-block;
+      width: 100px;
+    }
+
+    .menulink {
+      height: 40px;
+      padding: 7px;
+      border-bottom: 3px solid transparent;
+    }
+
+    .menulink:hover {
+      border-bottom: 3px solid #1E97E3;
+      text-decoration: none;
+      color: #1E97E3;
+    }
+
+    .footer {
+      margin-top: 12px;
+    }
+
+    .liitem {
+      height: 45px;
+    }
+
+    .skillLine {
+      display: inline-block;
+      width: 100%;
+      min-height: 90px;
+      padding: 3px 4px;
+    }
+
+    skillLineDefault {
+      padding: 3px 4px;
+    }
+
+    div.skill {
+      background: #F58723;
+      border-radius: 3px;
+      color: white;
+      font-weight: bold;
+      padding: 3px 4px;
+      width: 70px;
+    }
+
+    .rating {
+      margin-left: 30px;
+    }
+
+    .footerQR {
+      margin-left: 30%;
+    }
+
+    .leftText {
+      font-size: 41px;
+    }
+
+    .rightText {
+      font-size: 41px;
+      background: #F58723;
+      border-radius: 3px;
+      color: white;
+      padding: 3px 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" style="margin-top: 30px">
+      <div class="col-xs-10 col-sm-8 col-sm-offset-2 col-xs-offset-1">
+        <form id="searchForm">
+          <div class="form-group">
+            <div class="input-group">
+              <input id="inputSearch" type="text" class="form-control input-lg" name="search"
+                placeholder="Search 'city name' or 'city, country code' " />
+              <span class="input-group-btn">"
+                <button id="searchSubmit" type="submit" class="btn btn-primary btn-lg ladda-button"
+                  data-style="expand-right" type="submit"><span class="ladda-label">Search</span></button>
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <h2 style="text-align: center;margin: auto">Chicago, United States</h2>
+    <div class="container">
+      <br />
+      <div class="row">
+        <div class="col-sm-6 col-lg-4">
+          <div class="panel panel-primary" style="height: 450px;">
+            <div class="panel-heading">
+              <h4 class="text-center">Current Forecast<span class="glyphicon glyphicon-asterisk pull-right"></span>
+              </h4>
+            </div>
+            <div class="panel-body text-center">
+              <p>
+                <strong>broken clouds</strong>
+                <img src="https://openweathermap.org/img/wn/04n@2x.png" />
+              </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item liitem"><strong>Temperature:</strong>
+                <span class="pull-right">23°C</span>
+              </li>
+              <li class="list-group-item liitem"><strong>Feels Like:</strong>
+                <span class="pull-right">23°C</span>
+              </li>
+              <li class="list-group-item liitem"><strong>Humidity:</strong>
+                <span class="pull-right">72%</span>
+              </li>
+              <li class="list-group-item liitem"><strong>Sunrise:</strong>
+                <span class="pull-right">12:23 PM</span>
+              </li>
+              <li class="list-group-item liitem"><strong>Sunset:</strong>
+                <span class="pull-right">03:11 AM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="panel panel-primary" style="height: 450px;">
+            <div class="panel-heading">
+              <h4 class="text-center">5 Day Weather Forecast<span class="glyphicon glyphicon-list pull-right"></span>
+              </h4>
+            </div>
+            <table class="table table-hover">
+              <tr>
+                <td>23/5</td>
+                <td>25°C - light rain</td>
+                <td><img style="margin-top: -10px;" src="https://openweathermap.org/img/wn/10d.png" /></td>
+              </tr>
+              <tr>
+                <td>23/5</td>
+                <td>25°C - light rain</td>
+                <td><img style="margin-top: -10px;" src="https://openweathermap.org/img/wn/10d.png" /></td>
+              </tr>
+              <tr>
+                <td>23/5</td>
+                <td>25°C - light rain</td>
+                <td><img style="margin-top: -10px;" src="https://openweathermap.org/img/wn/10d.png" /></td>
+              </tr>
+              <tr>
+                <td>23/5</td>
+                <td>25°C - light rain</td>
+                <td><img style="margin-top: -10px;" src="https://openweathermap.org/img/wn/10d.png" /></td>
+              </tr>
+              <tr>
+                <td>23/5</td>
+                <td>25°C - light rain</td>
+                <td><img style="margin-top: -10px;" src="https://openweathermap.org/img/wn/10d.png" /></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="panel panel-primary" style="height: 450px;">
+            <div class="panel-heading">
+              <h4 class="text-center">About United States<span class="glyphicon glyphicon-map-marker pull-right"></span>
+              </h4>
+            </div>
+            <div class="panel-body text-center">
+              <img src="https://restcountries.eu/data/usa.svg" width="20%" />
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item liitem"><strong>Code:</strong>
+                <span class="pull-right">US</span>
+              </li>
+              <li class="list-group-item liitem"><strong>Capital:</strong>
+                <span class="pull-right">Washington, D.C.</span>
+              </li>
+              <li class="list-group-item liitem"><strong>Population:</strong>
+                <span class="pull-right">323,947,000</span>
+              </li>
+              <li class="list-group-item liitem"><strong>Currencies:</strong>
+                <span class="pull-right">USD ($)</span>
+              </li>
+              <li class="list-group-item liitem"><strong>Languages:</strong>
+                <span class="pull-right">English</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function (e) {
+      $("#searchSubmit").click(function (e) {
+        e.preventDefault()
+        var search = $('#inputSearch').val()
+        var url = location.protocol + "//" + location.host + location.pathname
+        if (!search) return alert("Please provide a search term");
+        url += '?search=' + search;
+        window.location.replace(url);
+      });
+    });
+  </script>
+</body>
+
+</html>
